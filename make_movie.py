@@ -6,6 +6,7 @@ import warnings ; warnings.filterwarnings('ignore') # mute warnings, live danger
 import matplotlib.pyplot as plt
 import matplotlib as mpl ; mpl.use("Agg")
 import matplotlib.animation as manimation
+# manimation.verbose.set_level('debug')
 
 import gym, os, sys, time, argparse
 

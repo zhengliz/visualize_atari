@@ -40,7 +40,7 @@ class OverfitAtari():
         _, logit, (hx, cx) = self.expert((Variable(expert_state.view(1,1,80,80)), (self.hx, self.cx)))
         self.hx, self.cx = Variable(hx.data), Variable(cx.data)
         
-        expert_action = int(F.softmax(logit).data.max(1)[1][0,0])
+        expert_action = int(F.softmax(logit).data.max(1)[1])
         target = torch.zeros(logit.size()) ; target[0,expert_action] = 1
         j = 72 ; k = 5
         expert_action = expert_action if False else np.random.randint(self.atari.action_space.n)

@@ -1,0 +1,112 @@
+
+
+	0.5M frames: saved model
+
+time 00h 10m 06s, episodes 196, frames 0.5M, run epr -7.97, run loss 18.57
+time 00h 11m 49s, episodes 216, frames 0.6M, run epr -7.66, run loss 17.92
+time 00h 13m 01s, episodes 233, frames 0.7M, run epr -7.69, run loss 16.80
+time 00h 14m 06s, episodes 252, frames 0.8M, run epr -7.54, run loss 16.22
+time 00h 16m 34s, episodes 285, frames 0.9M, run epr -7.86, run loss 14.96
+time 00h 17m 53s, episodes 306, frames 1.0M, run epr -8.24, run loss 14.45
+
+	1.0M frames: saved model
+
+time 00h 19m 05s, episodes 324, frames 1.0M, run epr -7.72, run loss 14.17
+time 00h 20m 35s, episodes 343, frames 1.1M, run epr -6.98, run loss 14.27
+time 00h 22m 02s, episodes 365, frames 1.2M, run epr -7.47, run loss 13.85
+time 00h 24m 14s, episodes 395, frames 1.3M, run epr -7.85, run loss 13.23
+time 00h 26m 16s, episodes 424, frames 1.4M, run epr -7.96, run loss 13.00
+
+	1.5M frames: saved model
+
+time 00h 27m 50s, episodes 449, frames 1.5M, run epr -7.57, run loss 12.94
+time 00h 29m 00s, episodes 464, frames 1.6M, run epr -7.95, run loss 12.68
+time 00h 30m 20s, episodes 485, frames 1.6M, run epr -7.30, run loss 12.89
+time 00h 31m 29s, episodes 503, frames 1.7M, run epr -7.86, run loss 12.41
+time 00h 33m 06s, episodes 526, frames 1.8M, run epr -7.74, run loss 12.21
+time 00h 34m 33s, episodes 546, frames 1.9M, run epr -6.96, run loss 12.23
+time 00h 35m 43s, episodes 567, frames 1.9M, run epr -7.67, run loss 11.69
+
+	2.0M frames: saved model
+
+time 00h 36m 48s, episodes 579, frames 2.0M, run epr -7.80, run loss 11.78
+time 00h 38m 19s, episodes 603, frames 2.1M, run epr -7.05, run loss 12.31
+time 00h 39m 46s, episodes 622, frames 2.2M, run epr -7.03, run loss 12.43
+time 00h 41m 21s, episodes 648, frames 2.3M, run epr -7.16, run loss 12.37
+time 00h 44m 18s, episodes 689, frames 2.4M, run epr -7.27, run loss 12.27
+time 00h 45m 40s, episodes 712, frames 2.5M, run epr -7.28, run loss 12.01
+
+	2.5M frames: saved model
+
+time 00h 47m 03s, episodes 732, frames 2.6M, run epr -7.47, run loss 11.83
+time 00h 48m 09s, episodes 747, frames 2.6M, run epr -7.82, run loss 11.59
+time 00h 49m 26s, episodes 765, frames 2.7M, run epr -7.81, run loss 11.61
+time 00h 50m 35s, episodes 784, frames 2.8M, run epr -6.97, run loss 11.63
+time 00h 52m 22s, episodes 809, frames 2.9M, run epr -7.34, run loss 11.54
+time 00h 53m 58s, episodes 834, frames 2.9M, run epr -7.24, run loss 11.57
+
+	3.0M frames: saved model
+
+time 00h 55m 13s, episodes 854, frames 3.0M, run epr -7.35, run loss 11.57
+time 00h 56m 41s, episodes 873, frames 3.1M, run epr -7.43, run loss 11.59
+time 00h 59m 09s, episodes 910, frames 3.2M, run epr -7.08, run loss 11.85
+time 01h 01m 37s, episodes 946, frames 3.4M, run epr -7.74, run loss 11.77
+time 01h 03m 15s, episodes 970, frames 3.5M, run epr -7.72, run loss 11.64
+
+	3.5M frames: saved model
+
+time 01h 04m 55s, episodes 994, frames 3.5M, run epr -6.99, run loss 11.60
+time 01h 06m 31s, episodes 1016, frames 3.6M, run epr -6.83, run loss 11.97
+time 01h 08m 27s, episodes 1045, frames 3.7M, run epr -7.57, run loss 11.55
+time 01h 10m 38s, episodes 1078, frames 3.9M, run epr -7.53, run loss 11.24
+time 01h 11m 49s, episodes 1096, frames 3.9M, run epr -6.72, run loss 11.53
+
+	4.0M frames: saved model
+
+time 01h 13m 29s, episodes 1121, frames 4.0M, run epr -6.95, run loss 11.42
+time 01h 14m 44s, episodes 1141, frames 4.1M, run epr -6.71, run loss 11.43
+time 01h 15m 52s, episodes 1156, frames 4.1M, run epr -6.97, run loss 11.22
+time 01h 17m 31s, episodes 1181, frames 4.2M, run epr -7.28, run loss 11.32
+time 01h 18m 51s, episodes 1202, frames 4.3M, run epr -7.76, run loss 10.86
+time 01h 20m 22s, episodes 1223, frames 4.4M, run epr -7.68, run loss 11.09
+time 01h 21m 44s, episodes 1242, frames 4.5M, run epr -7.68, run loss 11.02
+
+	4.5M frames: saved model
+
+time 01h 23m 26s, episodes 1268, frames 4.6M, run epr -7.72, run loss 11.04
+time 01h 24m 27s, episodes 1284, frames 4.6M, run epr -8.03, run loss 10.94
+time 01h 25m 31s, episodes 1304, frames 4.7M, run epr -7.88, run loss 10.72
+time 01h 26m 56s, episodes 1325, frames 4.7M, run epr -8.09, run loss 10.65
+time 01h 28m 36s, episodes 1349, frames 4.8M, run epr -7.89, run loss 10.77
+time 01h 30m 06s, episodes 1372, frames 4.9M, run epr -7.39, run loss 10.68
+time 01h 31m 11s, episodes 1390, frames 5.0M, run epr -7.83, run loss 10.62
+
+	5.0M frames: saved model
+
+time 01h 32m 54s, episodes 1416, frames 5.1M, run epr -8.38, run loss 10.30
+time 01h 34m 16s, episodes 1442, frames 5.1M, run epr -8.18, run loss 10.48
+time 01h 35m 33s, episodes 1456, frames 5.2M, run epr -8.30, run loss 10.49
+time 01h 36m 52s, episodes 1478, frames 5.3M, run epr -8.26, run loss 10.70
+time 01h 39m 21s, episodes 1517, frames 5.4M, run epr -8.57, run loss 10.26
+
+	5.5M frames: saved model
+
+time 01h 40m 46s, episodes 1539, frames 5.5M, run epr -7.35, run loss 10.94
+time 01h 42m 32s, episodes 1562, frames 5.6M, run epr -6.23, run loss 11.26
+time 01h 43m 34s, episodes 1577, frames 5.7M, run epr -6.55, run loss 11.14
+time 01h 44m 44s, episodes 1596, frames 5.7M, run epr -6.45, run loss 11.23
+time 01h 46m 39s, episodes 1622, frames 5.8M, run epr -7.09, run loss 11.03
+time 01h 47m 53s, episodes 1642, frames 5.9M, run epr -7.09, run loss 11.06
+time 01h 48m 59s, episodes 1661, frames 6.0M, run epr -7.55, run loss 10.68
+
+	6.0M frames: saved model
+
+time 01h 50m 59s, episodes 1690, frames 6.1M, run epr -7.69, run loss 10.47
+time 01h 52m 36s, episodes 1715, frames 6.2M, run epr -7.59, run loss 10.67
+time 01h 53m 49s, episodes 1733, frames 6.2M, run epr -7.57, run loss 10.78
+time 01h 55m 07s, episodes 1752, frames 6.3M, run epr -7.05, run loss 11.02
+time 01h 56m 50s, episodes 1775, frames 6.4M, run epr -6.46, run loss 11.29
+
+	6.5M frames: saved model
+
+time 01h 59m 19s, episodes 1811, frames 6.5M, run epr -6.55, run loss 11.18
