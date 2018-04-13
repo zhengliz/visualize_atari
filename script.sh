@@ -20,3 +20,14 @@ python3 make_movie.py --prefix control --checkpoint control.3.tar --first_frame 
 
 # learning agent videos
 # We are still cleaning up the code for generating the learning visualizations. Doing it yourself is not difficult; simply run the same code you would for a strong agent, and then load your partially-trained agents and pass them through deterministic rollouts where the states/actions are taken from the rollout of the strong agent. If you have details/questions about how to do this, email Sam at: greydanus (dot) 17 (at) gmail (dot) com.
+
+
+#python3 make_movie.py --prefix strong --checkpoint strong.40.tar --first_frame 350 --env Pong-v0 --delta 0
+#python3 make_movie.py --prefix strong --checkpoint strong.40.tar --first_frame 350 --env SpaceInvaders-v0 --delta 0
+#python3 make_movie.py --prefix strong --checkpoint strong.40.tar --first_frame 350 --env Breakout-v0 --delta 0
+#python3 make_movie.py --prefix overfit --checkpoint overfit.3.tar --first_frame 350 --env Pong-v0 --overfit_mode True --delta 0
+#python3 make_movie.py --prefix control --checkpoint control.3.tar --first_frame 350 --env Pong-v0 --overfit_mode True --delta 0
+#python3 make_movie.py --prefix overfit --checkpoint overfit.3.tar --first_frame 350 --env SpaceInvaders-v0 --overfit_mode True --delta 0
+#python3 make_movie.py --prefix control --checkpoint control.3.tar --first_frame 350 --env SpaceInvaders-v0 --overfit_mode True --delta 0
+#python3 make_movie.py --prefix overfit --checkpoint overfit.3.tar --first_frame 350 --env Breakout-v0 --overfit_mode True --delta 0
+#python3 make_movie.py --prefix control --checkpoint control.3.tar --first_frame 350 --env Breakout-v0 --overfit_mode True --delta 0

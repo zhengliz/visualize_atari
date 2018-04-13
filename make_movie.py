@@ -13,8 +13,8 @@ import gym, os, sys, time, argparse
 sys.path.append('..')
 from visualize_atari import *
 
-def make_movie(env_name, checkpoint='*.tar', num_frames=20, first_frame=0, resolution=75, \
-                save_dir='./movies/', density=5, radius=5, prefix='default', overfit_mode=False):
+def make_movie(env_name, checkpoint='*.tar', num_frames=20, first_frame=0, resolution=75,
+               save_dir='./movies/', density=5, radius=5, prefix='default', overfit_mode=False, delta=0):
     
     # set up dir variables and environment
     load_dir = '{}{}/'.format('overfit-' if overfit_mode else '', env_name.lower())
@@ -46,8 +46,8 @@ def make_movie(env_name, checkpoint='*.tar', num_frames=20, first_frame=0, resol
             ix = first_frame+i
             if ix < total_frames: # prevent loop from trying to process a frame ix greater than rollout length
                 frame = history['ins'][ix].squeeze().copy()
-                actor_saliency = score_frame(model, history, ix, radius, density, interp_func=occlude, mode='actor')
-                critic_saliency = score_frame(model, history, ix, radius, density, interp_func=occlude, mode='critic')
+                actor_saliency = score_frame(model, history, ix, radius, density, interp_func=occlude, mode='actor', delta=delta)
+                critic_saliency = score_frame(model, history, ix, radius, density, interp_func=occlude, mode='critic', delta=delta)
             
                 frame = saliency_on_atari_frame(actor_saliency, frame, fudge_factor=meta['actor_ff'], channel=2)
                 frame = saliency_on_atari_frame(critic_saliency, frame, fudge_factor=meta['critic_ff'], channel=0)
@@ -73,7 +73,10 @@ if __name__ == '__main__':
     parser.add_argument('-p', '--prefix', default='default', type=str, help='prefix to help make video name unique')
     parser.add_argument('-c', '--checkpoint', default='*.tar', type=str, help='checkpoint name (in case there is more than one')
     parser.add_argument('-o', '--overfit_mode', default=False, type=bool, help='analyze an overfit environment (see paper)')
+    parser.add_argument('--delta', default=0, type=int, help='delta t back in time')
     args = parser.parse_args()
 
+    args.save_dir = './movies_delta{}/'.format(args.delta)
+
     make_movie(args.env, args.checkpoint, args.num_frames, args.first_frame, args.resolution,
-        args.save_dir, args.density, args.radius, args.prefix, args.overfit_mode)
+        args.save_dir, args.density, args.radius, args.prefix, args.overfit_mode, args.delta)

@@ -35,17 +35,42 @@ def run_through_model(model, history, ix, interp_func=None, mask=None, blur_memo
     if blur_memory is not None: cx.mul_(1-blur_memory) # perturb memory vector
     return model((state, (hx, cx)))[0] if mode == 'critic' else model((state, (hx, cx)))[1]
 
-def score_frame(model, history, ix, r, d, interp_func, mode='actor'):
+
+def run_through_model_w_delta(model, history, ix, interp_func=None, mask=None, mode='actor', delta=2):
+    if mask is None:
+        return Variable(torch.Tensor(history['values'][ix+1])).view(1,-1) if mode == 'critic' else Variable(torch.Tensor(history['logits'][ix+1])).view(1,-1)
+
+    assert (interp_func is not None, "interp func cannot be none")
+
+    im = interp_func(prepro(history['ins'][ix-delta]).squeeze(), mask).reshape(1, 80, 80)  # perturb input I -> I'
+    tens_state = torch.Tensor(im)
+    state = Variable(tens_state.unsqueeze(0), volatile=True)
+    hx = Variable(torch.Tensor(history['hx'][ix-delta]).view(1, -1))
+    cx = Variable(torch.Tensor(history['cx'][ix-delta]).view(1, -1))
+    _, _, (hx, cx) = model((state, (hx, cx)))
+
+    for i in range(delta-1, -1, -1):
+        im = prepro(history['ins'][ix-i]).squeeze().reshape(1, 80, 80)
+        tens_state = torch.Tensor(im)
+        state = Variable(tens_state.unsqueeze(0), volatile=True)
+        hx = hx.detach()
+        cx = cx.detach()
+        _, _, (hx, cx) = model((state, (hx, cx)))
+
+    return model.critic_linear(hx.detach()) if mode == 'critic' else model.actor_linear(hx.detach())
+
+
+def score_frame(model, history, ix, r, d, interp_func, mode='actor', delta=0):
     # r: radius of blur
     # d: density of scores (if d==1, then get a score for every pixel...
     #    if d==2 then every other, which is 25% of total pixels for a 2D image)
     assert mode in ['actor', 'critic'], 'mode must be either "actor" or "critic"'
-    L = run_through_model(model, history, ix, interp_func, mask=None, mode=mode)
+    L = run_through_model_w_delta(model, history, ix, interp_func, mask=None, mode=mode, delta=delta)
     scores = np.zeros((int(80/d)+1,int(80/d)+1)) # saliency scores S(t,i,j)
     for i in range(0,80,d):
         for j in range(0,80,d):
             mask = get_mask(center=[i,j], size=[80,80], r=r)
-            l = run_through_model(model, history, ix, interp_func, mask=mask, mode=mode)
+            l = run_through_model_w_delta(model, history, ix, interp_func, mask=mask, mode=mode, delta=delta)
             scores[int(i/d),int(j/d)] = (L-l).pow(2).sum().mul_(.5).data[0]
     pmax = scores.max()
     scores = imresize(scores, size=[80,80], interp='bilinear').astype(np.float32)
